@@ -1,0 +1,222 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #0d1b2a;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+        position: relative;
+        height: 80px;
+        align-items: center;
+        padding: 20px 8%; 
+        border-bottom: 1px solid #1e2022;
+         }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+            position: absolute;
+            top: 15px;
+            left: 80px;
+        }
+
+        nav {
+            position: absolute;
+            top: 30px;
+             right: 80px;
+            }
+
+
+
+        nav ul {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            list-style: none;
+            gap: 50px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0b2545;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #1a5ef3;
+        }
+
+        /* Main Hero Section */
+        main {
+            min-height: 500px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 80px 80px 0;
+            box-sizing: border-box;
+             }
+        
+
+        .content {
+            max-width: 550px;
+        }
+
+        .greeting {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 28px;
+            font-weight: bold;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 60px;
+            font-weight: bold;
+            color: #0f172a;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .title {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 26px;
+            font-weight: bold;
+            color: #0f172a;
+            margin-bottom: 80px;
+        }
+
+        .title span {
+            color: #053174;
+            font-family: inherit;
+        }
+
+        .bio {
+            font-size: 18px;
+            color: #1e293b;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        /* Action Row: Buttons & Social Icons */
+        .action-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 60px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 22px;
+            background-color: #063970;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #002244;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 4px;
+            color: #063970;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.2s ease;
+        }
+
+        .social-links a.x-twitter {
+            border: 1.5px solid #fbfcfd;
+            width: 22px;
+            height: 22px;
+            font-size: 12px;
+            font-weight: bold;
+            align-self: center;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Profile Image Container */
+        .image-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 18px;
+            border-top: 1px solid #232629;
+            font-size: 14px;
+            color: #063970;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            main {
+                flex-direction: column-reverse;
+                justify-content: center;
+                padding: 40px 8%;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .action-row {
+                justify-content: center;
+            }
+
+            .image-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .name {
+                font-size: 40px;
+            }
+        }
