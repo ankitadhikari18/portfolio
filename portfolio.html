@@ -32,10 +32,12 @@
 </div> 
     <!-- Main Hero Content -->
     <main id="home">
-        <div class="content">
+        <div class="content reveal">
             <h2 class="greeting">Hello, It’s Me</h2>
             <span id="name"><h1 class="name">Ankit Adhikari</h1></span>
-            <h3 class="title">And I’m a <span>UI/UX DESIGNER</span></h3>
+            <h3 class="title">
+    And I’m a <span id="typing-text"></span>
+</h3>
             
             <p class="bio">
                 UI/UX designer focused on usability, clarity, and clean visual design—turning ideas into functional digital experiences.
@@ -53,7 +55,7 @@
             </div>
         </div>
 
-        <div class="image-container">
+        <div class="image-container reveal">
             <!-- Embedded image file reference -->
             <img src="profile.png" alt="Ankit Adhikari">
             <div class="social-icons">
@@ -67,8 +69,8 @@
         </div>
     </main>
 
-      <main>
-        <section class="about-page" id="about">
+      <main id="about">
+        <section class="about-page reveal" >
             <h1 class="page-title">
                 ABOUT ME
             </h1>
@@ -130,8 +132,8 @@
         </section>
     </main>
 
-    <main>
-        <section class="projects-page" id="projects">
+    <main id="projects">
+        <section class="projects-page reveal" >
             <h1 class="page-title">
                 PROJECTS
             </h1>
@@ -139,27 +141,33 @@
                 <!-- PROJECT 1 -->
                 <div class="project-card">
                     <!-- PUT YOUR PROJECT 1 IMAGE HERE -->
+                
                     <img src="prac 1.png"
-                         alt="Mobile Banking Application">
+                         alt="Simple Login Page">
+                
                     <h2>
-                        Mobile Banking Application
+                       Simple Login Page
                     </h2>
                 </div>
                 <!-- PROJECT 2 -->
                 <div class="project-card">
                     <!-- PUT YOUR PROJECT 2 IMAGE HERE -->
-                    <img src="prac 2.png"
-                         alt="Simple Login Page">
+                    
+                        <img src="prac 2.png"
+                         alt="Student Portal Page">
+                    
                     <h2>
-                        Simple Login Page
+                       Student Portal Page
                     </h2>
                 </div>
 
                 <!-- PROJECT 3 -->
                 <div class="project-card">
                     <!-- PUT YOUR PROJECT 3 IMAGE HERE -->
-                    <img src="prac 3.png"
+                  
+                        <img src="prac 3.png"
                          alt="Fitness Tracking Application">
+                    
                     <h2>
                         Fitness Tracking Application
                     </h2>
@@ -168,37 +176,45 @@
                 <!-- PROJECT 4 -->
                 <div class="project-card">
                     <!-- PUT YOUR PROJECT 4 IMAGE HERE -->
-                    <img src="prac 4.png"
-                         alt="Student Portal">
+                    
+                        <img src="prac 4.png"
+                         alt="Dashboard for IG Subscriber">
+                    
                     <h2>
-                        Login page for Student
+                        Dashboard for IG Subscriber
                     </h2>
                 </div>
 
                 <!-- PROJECT 5 -->
                 <div class="project-card">
                     <!-- PUT YOUR PROJECT 5 IMAGE HERE -->
+                  
                     <img src="prac 5.png"
-                         alt="Instagram Subscriber Dashboard">
-                    <h2>
-                        Dashboard for IG Subscriber
+                         alt=" Dashboard for Product Review">
+                   
+                    <h2> 
+                        Dashboard for Product Review
+                        
                     </h2>
                 </div>
 
                 <!-- PROJECT 6 -->
                 <div class="project-card">
                     <!-- PUT YOUR PROJECT 6 IMAGE HERE -->
-                    <img src="prac 6.png"
-                         alt="Product Review Dashboard">
+                   
+                        <img src="prac 6.png"
+                         alt=" Mobile Banking Application">
+                    
                     <h2>
-                        Dashboard for Product Review
+                        Mobile Banking Application
+                       
                     </h2>
                 </div>
             </div>
         </section>
     </main>
-<main>
-    <section class="contact-page" id="contact">
+<main id="contact">
+    <section class="contact-page reveal" >
 
         <h1 class="contact-title">
             Contact Us
@@ -217,59 +233,51 @@
                     Just write us a message !
                 </h2>
 
-                <form>
+                <form id="contactForm">
 
-                    <div class="form-row">
+    <div class="form-row">
 
-                        <div class="form-group">
-                            <label for="email">
-                                Email
-                            </label>
+        <div class="form-group">
+            <label for="email">Email</label>
 
-                            <input
-                                type="email"
-                                id="email"
-                                placeholder="example@gmail.com"
-                                required>
-                        </div>
+            <input
+                type="email"
+                id="email"
+                placeholder="example@gmail.com"
+                required>
+        </div>
 
+        <div class="form-group">
+            <label for="name">Name</label>
 
-                        <div class="form-group">
-                            <label for="name">
-                                Name
-                            </label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Your name"
+                required>
+        </div>
 
-                            <input
-                                type="text"
-                                id="name"
-                                placeholder="Your name"
-                                required>
-                        </div>
+    </div>
 
-                    </div>
+    <div class="form-group full">
 
+        <label for="message">Message</label>
 
-                    <div class="form-group full">
+        <textarea
+            id="message"
+            placeholder="Write your message here..."
+            rows="5"
+            required></textarea>
 
-                        <label for="message">
-                            Message
-                        </label>
+    </div>
 
-                        <textarea
-                            id="message"
-                            placeholder="Write your message here..."
-                            rows="5"></textarea>
+    <button type="submit">
+        Submit
+    </button>
 
-                    </div>
-
-
-                    <button type="submit">
-                        Submit
-                    </button>
-
-                </form>
-
+</form>
             </div>
+            
 
 
             <!-- RIGHT SIDE IMAGE -->
@@ -375,6 +383,14 @@
     <footer>
         &copy;Copyright All rights reserved | Ankit Adhikari
     </footer>
+<button id="backToTop" aria-label="Back to top">
+    ↑
+</button>
+<div id="lightbox">
+    <button id="closeLightbox">×</button>
+    <img id="lightboxImage" src="" alt="Project preview">
+</div>
 
+<script src="portfolio.js"></script>
 </body>
 </html>
