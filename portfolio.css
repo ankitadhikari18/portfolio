@@ -13,6 +13,128 @@
 #contact {
     scroll-margin-top: 100px;
 }
+nav a.active {
+    color: #0084ff;
+    position: relative;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: #44a4ff;
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#lightbox {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10000;
+}
+
+#lightbox img {
+    max-width: 85%;
+    max-height: 85%;
+
+    border-radius: 10px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+#closeLightbox {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+
+    background: none;
+    border: none;
+
+    color: white;
+
+    font-size: 40px;
+
+    cursor: pointer;
+}
+
+#closeLightbox:hover {
+    color: #44a4ff;
+}
+
+
+/* Back to Top Button */
+
+#backToTop {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    transition: 
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+#backToTop:hover {
+    background-color: #0084ff;
+    transform: translateY(-5px);
+    color:#fff;
+     box-shadow: 0 9px 22px rgba(0, 0, 0, 0.55);
+}
+#backToTop::after {
+    content: "Back to top";
+    position: absolute;
+     bottom: 40px;
+    transform: translateY(-50%);
+    color: #0084ff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+}
+
+#backToTop:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
         body {
             background-color: #ffffff;
             color: #0d1b2a;
@@ -27,17 +149,13 @@
 
         header {
              position: fixed;
-    
     left: 0;
     width: 100%;
     z-index: 1000;
-     
         top:0;
-      
         height: 80px;
         align-items: center;
         padding: 20px 8%; 
-       
         background-color: white;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
          }
@@ -109,7 +227,7 @@ nav a:hover {
             margin-bottom: 20px;
         }
 
-      .name {
+        .name {
             font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 60px;
             font-weight: bold;
@@ -140,7 +258,7 @@ nav a:hover {
             font-size: 18px;
             color: #011022;
             line-height: 1.5;
-            margin-bottom: 60px;
+            margin-bottom: 65px;
         }
 
         /* Action Row: Buttons & Social Icons */
@@ -183,7 +301,7 @@ nav a:hover {
       display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
     margin-top: 100px;
 }
 
@@ -206,8 +324,6 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
-
-
         /* Profile Image Container */
        .image-container {
     position: relative;
@@ -223,14 +339,16 @@ nav a:hover {
 
     margin-right: 50px;
    
+   
 }
 
        .image-container img {
     width: 300px;
     height: 300px;
+    
     border-radius: 50%;
     object-fit: cover;
-     margin-bottom: 20px;
+     margin-bottom: 30px;
      /* Drop shadow like profile picture */
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.20);
 
@@ -268,15 +386,11 @@ nav a:hover {
 
 .about-container {
     width: 100%;
-
     display: grid;
-
     /* Left content + right image */
     grid-template-columns: 1fr 1fr;
-
     /* Increase this to push image further right */
     column-gap: 100px;
-
     align-items: stretch;
 }
 
@@ -468,22 +582,18 @@ nav a:hover {
         padding-top: 40px;
     }
 
-
     .about-page .page-title {
         font-size: 28px;
     }
-
 
     .about-container {
         column-gap: 0;
     }
 
-
     .about-box {
         padding: 25px;
         font-size: 15px;
     }
-
 
     .skills-grid {
         grid-template-columns: 1fr 1fr;
@@ -491,7 +601,6 @@ nav a:hover {
         row-gap: 22px;
         font-size: 14px;
     }
-
 
     .about-image {
         height: 400px;
@@ -781,13 +890,13 @@ nav a:hover {
 
 
 .contact-logo img {
-    width: 75px;
-    height: 75px;
+    width: 90px;
+    height: 90px;
     object-fit: contain;
     
 }
 .contact-item i {
-    font-size: 30px;
+    font-size: 40px;
     color: #011022;
     transition: 0.3s ease;
 }
@@ -816,7 +925,7 @@ h2{
 
 .social-icons a {
     color: #011022;
-    font-size: 22px;
+    font-size: 30px;
     transition: 0.3s;
 }
 
@@ -854,13 +963,13 @@ h2{
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     font-size: 16px;
     font-weight: 600;
 }
 
 .contact-item i {
-    font-size: 30px;
+    font-size: 24px;
     color: #011022;
 }
 
@@ -892,14 +1001,14 @@ h2{
 /* LOGO */
 
 .contact-logo {
-    margin: 0 0 18px 0;
+    margin: 0 0 10px 0;
     display: flex;
     justify-content: center;
 }
 
 .contact-logo img {
-    width: 75px;
-    height: 75px;
+    width: 90px;
+    height: 90px;
     object-fit: contain;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -915,12 +1024,12 @@ h2{
 
 .social-icons {
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 .social-icons a {
     color: #011022;
-    font-size: 22px;
+    font-size: 24px;
     transition: 0.3s ease;
 }
 
