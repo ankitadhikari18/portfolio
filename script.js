@@ -173,16 +173,21 @@ function deleteWord() {
 typeWord();
 
 
-
 const contactForm = document.getElementById("contactForm");
+
 contactForm.addEventListener("submit", async function(event) {
 
     console.log("CONTACT FORM SUBMITTED");
 
     event.preventDefault();
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const message = document.getElementById("message").value;
+
+console.log("NAME:", name);
+console.log("EMAIL:", email);
+console.log("MESSAGE:", message);
 
     try {
 
