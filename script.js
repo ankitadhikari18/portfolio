@@ -173,14 +173,55 @@ function deleteWord() {
 typeWord();
 
 
+
 const contactForm = document.getElementById("contactForm");
 
-contactForm.addEventListener("submit", function(event) {
+contactForm.addEventListener("submit", async function(event) {
 
     event.preventDefault();
 
-    alert("Your message has been submitted successfully!");
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
 
-    contactForm.reset();
+    try {
+
+  const response = await fetch("https://portfolio-backend-28xn.onrender.com/contact", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                message: message
+            })
+
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+
+            alert("Your message has been sent successfully!");
+
+            contactForm.reset();
+
+        } else {
+
+            alert("Sorry, your message could not be sent.");
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Unable to connect to the server.");
+
+    }
 
 });
