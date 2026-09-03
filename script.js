@@ -175,11 +175,11 @@ typeWord();
 
 
 const contactForm = document.getElementById("contactForm");
-
 contactForm.addEventListener("submit", async function(event) {
 
-    event.preventDefault();
+    console.log("CONTACT FORM SUBMITTED");
 
+    event.preventDefault();
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
