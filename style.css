@@ -1931,12 +1931,14 @@ img {
     .form-group textarea {
         font-size: 13px;
         padding: 10px;
+        
     }
 
     .contact-image {
         width: 190px;
         height: 190px;
         margin: 0 auto;
+        margin-top: 30px;
     }
 
     .contact-image img {
@@ -2062,4 +2064,111 @@ img {
     .contact-item {
         font-size: 13px;
     }
+}
+/* ===============================
+   THANK YOU POPUP
+================================ */
+
+#thankYouBox {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 99999;
+}
+
+/* Thank-you box */
+
+.thank-you-content {
+    position: relative;
+
+    width: 400px;
+    max-width: calc(100% - 40px);
+
+    padding: 50px 40px;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+    animation: thankYouAppear 0.45s ease;
+}
+
+.thank-you-content h2 {
+    margin: 0 0 15px;
+
+    font-size: 32px;
+
+    color: #003f91;
+}
+
+.thank-you-content p {
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #333;
+}
+
+/* Close button */
+
+.close-thank-you {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 32px;
+    line-height: 40px;
+
+    color: #333;
+
+    cursor: pointer;
+
+    z-index: 999999;
+
+    pointer-events: auto;
+
+    transition: all 0.25s ease;
+}
+
+.close-thank-you:hover {
+    color: #003f91;
+    transform: rotate(90deg);
+}
+
+/* Smooth appearance */
+
+@keyframes thankYouAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
 }
