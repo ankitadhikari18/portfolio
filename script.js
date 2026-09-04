@@ -181,9 +181,16 @@ contactForm.addEventListener("submit", async function(event) {
 
     event.preventDefault();
 
-const name = document.getElementById("name").value;
-const email = document.getElementById("email").value;
-const message = document.getElementById("message").value;
+const nameInput = document.getElementById("contactName");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+
+console.log("NAME ELEMENT:", nameInput);
+console.log("NAME VALUE:", nameInput ? nameInput.value : "NOT FOUND");
+
+const name = nameInput ? nameInput.value.trim() : "";
+const email = emailInput.value.trim();
+const message = messageInput.value.trim();
 
 console.log("NAME:", name);
 console.log("EMAIL:", email);
@@ -209,13 +216,13 @@ console.log("MESSAGE:", message);
 
         const result = await response.json();
 
-        if (result.success) {
+       if (result.success) {
 
-            alert("Your message has been sent successfully!");
+    document.getElementById("thankYouBox").style.display = "flex";
 
-            contactForm.reset();
+    contactForm.reset();
 
-        } else {
+}else {
 
             alert("Sorry, your message could not be sent.");
 
@@ -230,3 +237,17 @@ console.log("MESSAGE:", message);
     }
 
 });
+
+const thankYouBox = document.getElementById("thankYouBox");
+const closeThankYou = document.getElementById("closeThankYou");
+
+console.log("Thank You Box:", thankYouBox);
+console.log("Close Button:", closeThankYou);
+
+closeThankYou.onclick = function () {
+
+    console.log("CLOSE BUTTON CLICKED");
+
+    thankYouBox.style.display = "none";
+
+};
