@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+```html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ankit Adhikari - UI/UX Designer</title>
+
     <meta name="description"
-      content="Ankit Adhikari is a UI/UX Designer specializing in user-centered design, visual design, wireframing, prototyping, and digital experiences.">
+          content="Ankit Adhikari is a UI/UX Designer specializing in user-centered design, visual design, wireframing, prototyping, and digital experiences.">
+
+    <meta name="author" content="Ankit Adhikari">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ankitadhikari18.com.np/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ankit Adhikari - UI/UX Designer">
+    <meta property="og:description"
+          content="Portfolio of Ankit Adhikari, a UI/UX Designer focused on clean, user-centered digital experiences.">
+    <meta property="og:url" content="https://ankitadhikari18.com.np/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ankitadhikari18.com.np/profile.png">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ankit Adhikari - UI/UX Designer">
+    <meta name="twitter:description"
+          content="Portfolio of Ankit Adhikari, a UI/UX Designer focused on clean, user-centered digital experiences.">
+    <meta name="twitter:image" content="http://ankitadhikari18.com.np/profile.png">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
@@ -14,15 +37,19 @@
 
     <!-- Your CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="profile.png">
 </head>
+```
+
 <body>
 
    <div id="header"><!-- Header Section -->
     <header>
            <div class="logo">
             <a href="#home"><img src="darkbluelogo.png" class="logo-normal" alt="Logo"></a>
-            <a href="#home"><img src="logoblue.png" class="logo-hover" alt="Logo"></a>
+            <a href="#home"><img src="bluelogo.png" class="logo-hover" alt="Logo"></a>
     </div>
         <nav>
             <ul>
@@ -79,12 +106,12 @@
             <!-- Embedded image file reference -->
             <img src="profile.png" alt="Ankit Adhikari">
             <div class="social-icons">
-                    <a href="https://www.facebook.com/ankit.adhikari.9231" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/_ankit_adhikari/" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
-                    <a href="www.youtube.com/@ankitadhikari4439" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/ankit.adhikari.9231" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_ankit_adhikari/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@ankitadhikari4439" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                     <!-- Connected to your LinkedIn profile -->
                     <a href="https://www.linkedin.com/in/ankit-adhikari-2179b92a2" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="X"><i class="fa-brands fa-square-x-twitter"></i></a>
+                    <a href="https://github.com/ankitadhikari18" target="_blank" aria-label="Github"><i class="fa-brands fa-github"></i></a>
                 </div>
         </div>
     </main>
@@ -268,11 +295,11 @@
         </div>
 
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="contactName">Name</label>
 
             <input
                 type="text"
-                id="name"
+                id="contactName"
                 placeholder="Your name"
                 required>
         </div>
@@ -331,7 +358,7 @@
 
                         <i class="fa-regular fa-envelope"></i>
 
-                           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ankitadhikari310@gmail.com&su=Contact%20from%20Portfolio"
+                       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ankitadhikari310@gmail.com&su=Contact%20from%20Portfolio"
    target="_blank">
     ankitadhikari310@gmail.com
 </a>
@@ -412,5 +439,25 @@
 </div>
 
 <script src="script.js"></script>
+<!-- Thank You Popup -->
+<div id="thankYouBox">
+
+    <div class="thank-you-content">
+
+        <button type="button" id="closeThankYou" class="close-thank-you">
+            &times;
+        </button>
+
+        <h2>Thank You!</h2>
+
+        <p>
+            Your message has been sent successfully.
+            <br>
+            I'll get back to you soon.
+        </p>
+
+    </div>
+
+</div>
 </body>
 </html>
