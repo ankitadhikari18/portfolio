@@ -172,73 +172,57 @@ function deleteWord() {
 
 typeWord();
 
-
 const contactForm = document.getElementById("contactForm");
+const thankYouBox = document.getElementById("thankYouBox");
 
 contactForm.addEventListener("submit", async function(event) {
 
-    console.log("CONTACT FORM SUBMITTED");
-
     event.preventDefault();
 
-const nameInput = document.getElementById("contactName");
-const emailInput = document.getElementById("email");
-const messageInput = document.getElementById("message");
+    const name = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-console.log("NAME ELEMENT:", nameInput);
-console.log("NAME VALUE:", nameInput ? nameInput.value : "NOT FOUND");
+    // Show thank-you box IMMEDIATELY
+    thankYouBox.style.display = "flex";
 
-const name = nameInput ? nameInput.value.trim() : "";
-const email = emailInput.value.trim();
-const message = messageInput.value.trim();
+    // Reset form immediately
+    contactForm.reset();
 
-console.log("NAME:", name);
-console.log("EMAIL:", email);
-console.log("MESSAGE:", message);
-
+    // Send message to backend in the background
     try {
 
-  const response = await fetch("https://portfolio-backend-28xn.onrender.com/contact", {
+        const response = await fetch(
+            "https://portfolio-backend-28xn.onrender.com/contact",
+            {
+                method: "POST",
 
-            method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-            headers: {
-                "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                message: message
-            })
-
-        });
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message
+                })
+            }
+        );
 
         const result = await response.json();
 
-       if (result.success) {
-
-    document.getElementById("thankYouBox").style.display = "flex";
-
-    contactForm.reset();
-
-}else {
-
-            alert("Sorry, your message could not be sent.");
-
+        if (!result.success) {
+            console.error("Message was not sent.");
         }
 
     } catch (error) {
 
-        console.error(error);
-
-        alert("Unable to connect to the server.");
+        console.error("Backend error:", error);
 
     }
 
 });
 
-const thankYouBox = document.getElementById("thankYouBox");
 const closeThankYou = document.getElementById("closeThankYou");
 
 console.log("Thank You Box:", thankYouBox);
